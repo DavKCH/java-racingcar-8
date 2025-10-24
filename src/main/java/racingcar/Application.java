@@ -26,82 +26,20 @@ public class Application {
     }
 
     private static void carNameInput(String strInput) {
-        final String DELIMITER = ",";
 
-        // null 예외
-        if (strInput == null) {
-            System.out.println("잘못된 값을 입력 하셨습니다.");
-            throw new IllegalArgumentException();
-        }
+        CarException.CarNameExceptionStart(strInput);
 
-        strInput = strInput.trim();
-        if (strInput.isEmpty()) {
-            System.out.println("잘못된 값을 입력 하셨습니다.1");
-            throw new IllegalArgumentException();
-        }
-
-        String falseStr = "^[^a-zA-Zㄱ-ㅎㅏ-ㅣ가-힣,]*$";
-        if (strInput.matches(falseStr)) {
-            System.out.println("잘못된 값을 입력 하셨습니다.2");
-            throw new IllegalArgumentException();
-        }
-
-        // 처음 글자가 ","일때
-        if (strInput.startsWith(DELIMITER)){
-            System.out.println("잘못된 값을 입력 하셨습니다.3");
-            throw new IllegalArgumentException();
-        }
-
-        // 마지막 글자가 ","일때
-        String lastStrInput = strInput.substring(strInput.length()-1);
-        if (lastStrInput.equals(DELIMITER)) {
-            System.out.println("잘못된 값을 입력 하셨습니다.4");
-            throw new IllegalArgumentException();
-        }
-
+        String DELIMITER = ",";
         String[] strCar = strInput.split(DELIMITER);
-        for (String strName : strCar) {
-            if (strName.length() > 5) {
-                System.out.println("자동차 이름은 5글자 이하 입니다.");
-                throw new IllegalArgumentException();
-            }
-        }
 
-        List<String> list = Arrays.asList(strCar);
-        HashSet<String> hashSet = new HashSet<>(list);
-        if (list.size() != hashSet.size()) {
-            System.out.println("잘못된 값을 입력 하셨습니다.5");
-            throw new IllegalArgumentException();
-        }
-
-        for (String name : list) {
+        for (String name : strCar) {
             carCenter.add(new Car(name));
         }
     }
 
     private static int gameTrack(String countInput) {
 
-        if (countInput == null) {
-            System.out.println("잘못된 값을 입력 하셨습니다.");
-            throw new IllegalArgumentException();
-        }
-
-        countInput = countInput.trim();
-        if (countInput.isEmpty()) {
-            System.out.println("잘못된 값을 입력 하셨습니다.1-1");
-            throw new IllegalArgumentException();
-        }
-
-        String falseStr = "^[^0-9]*$";
-        if (countInput.matches(falseStr)) {
-            System.out.println("잘못된 값을 입력 하셨습니다.1-2");
-            throw new IllegalArgumentException();
-        }
-
-        if(countInput.startsWith("0")) {
-            System.out.println("잘못된 값을 입력 하셨습니다.1-3");
-            throw new IllegalArgumentException();
-        }
+        GameTrackException.gameTrackExceptionStart(countInput);
 
         System.out.println();
         return Integer.parseInt(countInput);
