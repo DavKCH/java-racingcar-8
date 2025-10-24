@@ -28,7 +28,8 @@ public class Application {
         String DELIMITER = ",";
         String[] strCar = strInput.split(DELIMITER);
 
-        for (String name : strCar) {
+        for (String car : strCar) {
+            String name = car.trim();
             carCenter.add(new Car(name));
         }
     }

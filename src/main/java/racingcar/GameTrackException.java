@@ -36,9 +36,11 @@ public class GameTrackException {
     }
 
     public static void gameTrackExceptionStart(String countInput) {
+
         gameTrackNull(countInput);
         gameTrackCountEmpty(countInput);
         gameTrackCountFalse(countInput);
+
         gameTrackStartFalse(countInput);
     }
 }

@@ -49,6 +49,19 @@ public class CarException {
         }
     }
 
+    private static void carNameTrimFalse(String strInput) {
+        String[] strCar = strInput.split(DELIMITER);
+
+        for (String strName : strCar) {
+            String trimName = strName.trim();
+            if (trimName.isEmpty()) {
+                System.out.println("자동차 이름은 공백 이 불가능 합니다.");
+                throw new IllegalArgumentException();
+            }
+        }
+    }
+
+
     private static void carNameLengthFalse(String strInput) {
         String[] strCar = strInput.split(DELIMITER);
         for (String strName : strCar) {
@@ -58,7 +71,6 @@ public class CarException {
             }
         }
     }
-
 
     private static void carNameDuplicate(String strInput) {
         String[] strCar = strInput.split(DELIMITER);
@@ -73,11 +85,15 @@ public class CarException {
 
 
     public static void CarNameExceptionStart(String strInput) {
+
         carNameNull(strInput);
         carNameEmpty(strInput);
         carNameFalse(strInput);
+
         carNameStartFalse(strInput);
         carNameEndFalse(strInput);
+
+        carNameTrimFalse(strInput);
         carNameLengthFalse(strInput);
         carNameDuplicate(strInput);
     }
