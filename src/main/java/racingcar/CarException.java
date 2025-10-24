@@ -21,7 +21,7 @@ public class CarException {
     private static void carNameEmpty(String strInput) {
         strInput = strInput.trim();
         if (strInput.isEmpty()) {
-            System.out.println("잘못된 값을 입력 하셨습니다.1");
+            System.out.println("잘못된 값을 입력 하셨습니다.");
             throw new IllegalArgumentException();
         }
     }
@@ -29,14 +29,14 @@ public class CarException {
     private static void carNameFalse(String strInput) {
         String falseStr = "^[^a-zA-Zㄱ-ㅎㅏ-ㅣ가-힣,]*$";
         if (strInput.matches(falseStr)) {
-            System.out.println("잘못된 값을 입력 하셨습니다.2");
+            System.out.println("잘못된 값을 입력 하셨습니다.");
             throw new IllegalArgumentException();
         }
     }
 
     private static  void carNameStartFalse(String strInput) {
         if (strInput.startsWith(DELIMITER)){
-            System.out.println("잘못된 값을 입력 하셨습니다.3");
+            System.out.println("처음 글자로 ',' 입력이 불가능 합니다.");
             throw new IllegalArgumentException();
         }
     }
@@ -44,7 +44,7 @@ public class CarException {
     private static void carNameEndFalse(String strInput) {
         String lastStrInput = strInput.substring(strInput.length()-1);
         if (lastStrInput.equals(DELIMITER)) {
-            System.out.println("잘못된 값을 입력 하셨습니다.4");
+            System.out.println("마지막 글자로 ',' 입력이 불가능 합니다.");
             throw new IllegalArgumentException();
         }
     }
@@ -66,7 +66,7 @@ public class CarException {
 
         HashSet<String> hashSet = new HashSet<>(list);
         if (list.size() != hashSet.size()) {
-            System.out.println("잘못된 값을 입력 하셨습니다.5");
+            System.out.println("자동차의 이름은 중복 할수 없습니다..");
             throw new IllegalArgumentException();
         }
     }

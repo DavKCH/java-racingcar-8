@@ -15,7 +15,7 @@ public class GameTrackException {
     private static void gameTrackCountEmpty(String countInput) {
         countInput = countInput.trim();
         if (countInput.isEmpty()) {
-            System.out.println("잘못된 값을 입력 하셨습니다.1-1");
+            System.out.println("잘못된 값을 입력 하셨습니다.");
             throw new IllegalArgumentException();
         }
     }
@@ -23,14 +23,14 @@ public class GameTrackException {
     private static void gameTrackCountFalse(String countInput) {
         String falseStr = "^[^0-9]*$";
         if (countInput.matches(falseStr)) {
-            System.out.println("잘못된 값을 입력 하셨습니다.2");
+            System.out.println("잘못된 값을 입력 하셨습니다.");
             throw new IllegalArgumentException();
         }
     }
 
     private static  void gameTrackStartFalse(String countInput) {
         if (countInput.startsWith("0")){
-            System.out.println("잘못된 값을 입력 하셨습니다.3");
+            System.out.println("처음 에는 '0' 입력이 불가능 합니다.");
             throw new IllegalArgumentException();
         }
     }
