@@ -17,7 +17,7 @@ public class Game {
         this.lastTrack = lastTrack;
     }
 
-    public void gameStart() {gi
+    public void gameStart() {
         for (int i = 0; i < lastTrack; i++) {
             car();
         }
