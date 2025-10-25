@@ -21,8 +21,8 @@ public class GameTrackException {
     }
 
     private static void gameTrackCountFalse(String countInput) {
-        String falseStr = "^[^0-9]*$";
-        if (countInput.matches(falseStr)) {
+        String trueStr = "^[0-9]*$";
+        if (!countInput.matches(trueStr)) {
             System.out.println("잘못된 값을 입력 하셨습니다.");
             throw new IllegalArgumentException();
         }
