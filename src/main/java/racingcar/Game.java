@@ -28,7 +28,7 @@ public class Game {
                 .max(Comparator.comparingInt(Car::getMoveCarCount))
                 .orElse(null);
 
-        if (winer == null) {ㅎ
+        if (winer == null) {
             System.out.println("잘못된 값을 입력 하셧습니다.");
             throw new IllegalArgumentException();
         }
