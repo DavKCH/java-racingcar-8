@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-public class CarException {
+public class CarNameException {
 
-    private CarException() {
+    private CarNameException() {
     }
 
     private static final String DELIMITER = ",";
@@ -27,8 +27,8 @@ public class CarException {
     }
 
     private static void carNameFalse(String strInput) {
-        String falseStr = "^[^a-zA-Zㄱ-ㅎㅏ-ㅣ가-힣,]*$";
-        if (strInput.matches(falseStr)) {
+        String trueStr = "^[a-zA-Zㄱ-ㅎㅏ-ㅣ가-힣,]*$";
+        if (!strInput.matches(trueStr)) {
             System.out.println("잘못된 값을 입력 하셨습니다.");
             throw new IllegalArgumentException();
         }

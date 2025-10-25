@@ -23,7 +23,7 @@ public class Application {
 
     private static void carNameInput(String strInput) {
 
-        CarException.CarNameExceptionStart(strInput);
+        CarNameException.CarNameExceptionStart(strInput);
 
         String DELIMITER = ",";
         String[] strCar = strInput.split(DELIMITER);
