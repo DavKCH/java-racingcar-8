@@ -50,7 +50,7 @@ class CarNameExceptionTest {
 
 
         Car car2 = new Car("ab,");
-        String carName2 = car1.getCarName();
+        String carName2 = car2.getCarName();
         Assertions.assertThrows(IllegalArgumentException.class,
                 () -> CarNameException.CarNameExceptionStart(carName2)
         );
